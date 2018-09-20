@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row mb-5">
+        <div class="col-12 d-flex justify-content-center mb-5">
+            <img src="/images/burger.svg">
+        </div>
+    </div>
+    {{!-- <p>{{this.devoured}}</p> --}}
+
+
+    <div class="row d-flex justify-content-center">
+
+        <div class="col-6">
+            <h1 class="mb-5">Burgers not eaten</h1>
+            {{#each burger}} {{#unless devoured}}
+            {{!-- <div class="col-6"> --}}
+                <div class="row">
+                    <div class="col-6 mt-3">
+                        <h2 class="d-inline center">{{burger_name}} </h1>
+                    </div>
+                    <div class="col-6 mt-3">
+                        <button class="buttons btn bg-success" data={{id}} data-devoured={{devoured}}> Devour </button>
+                    </div>
+                </div>
+                {{!-- </div> --}}
+            {{/unless}}{{/each}}
+        </div>
+
+        <div class="col-6">
+            <h1 class="mb-5">Burgers Eaten</h1>
+            {{#each burger}} {{#if devoured}}
+            {{!-- <div class="col-6"> --}}
+
+                <div class="row">
+                    <div class="col-12 mt-2">
+                        <h2>{{id}}. {{burger_name}}</h1>
+                    </div>
+                </div>
+
+                {{/if}}
+                {{!-- </div> --}}
+            {{/each}}
+        </div>
+    </div>
+
+
+    {{!-- {{#if this.devoured}}
+    <div class="col-6 offset-8 mt-5">
+        <p>{{this.burger}}</p>
+    </div>
+
+    {{/if}} --}}
+
+    {{!-- <p>{{this.burger}}</p> --}}
+
+
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center mt-5">
+            <form action="/create" method="POST">
+                <input class="form-control" type="text" name="burger" placeholder="Enter a burger">
+            </form>
+        </div>
+    </div>
+
+</div>
